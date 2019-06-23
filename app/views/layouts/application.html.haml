@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ProductPlan
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .row.segment
+      .col-md-2.header-segment
+        .logo
+          = image_tag('product_plan_logo.gif')
+          %span
+            ProductPlan
+            %sup
+              &reg;
+      .col-md-10.header-segment
+        %span
+          Candidate Roadmap
+    .row.segment
+      .col-md-12
+        %h1
+          Product roadmap
+    .row
+      .col-md-10.main-content
+        %ul#main-navigation.pull-right.text-left
+          %li.active
+            Roadmap
+          %li
+            Planning Board
+          %li
+            Parking Lot
+        = yield
+      .col-md-2.sidebar-left
+        %ul#side-navigation
+          %li
+            %button
+              %span
+                = image_tag('item_icon.gif')
+                Add lane
+          %li
+            %button
+              %span
+                = image_tag('item_icon.gif')
+                Add bar

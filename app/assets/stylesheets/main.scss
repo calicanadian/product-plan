@@ -1,0 +1,127 @@
+@import 'bootstrap-variables';
+
+body {
+  background: #fff;
+  font-family: 'gilroymedium', sans-serif;
+  color: #000;
+  .row {
+    padding:0 !important;
+    margin:0 !important;
+  }
+}
+
+.header-segment {
+  margin: 0;
+  padding: 0 !important;
+  font-size: 14px;
+  line-height: 3;
+  span {
+    font-size: inherit;
+    color: inherit;
+    vertical-align: middle;
+  }
+}
+
+.segment {
+  border-bottom: 1px solid #c1c4c7;
+  h1 {
+    padding: 40px 25px 20px;
+  }
+}
+
+.sidebar-left {
+  padding: 0 0 !important;
+  border-left: 1px solid #c1c4c7;
+  display: block;
+  min-height: 100vh !important;
+}
+
+.main-content {
+  display: block;
+  min-height: 100vh !important;
+  background: #e4e6e8;
+  color: #5e6266;
+  font-size: 12px;
+  ul#main-navigation {
+    position:relative;
+    top: -18px;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 0 8px;
+      margin: 0 4px;
+      &.active {
+        border-bottom: 4px solid #1973ba;
+      }
+    }
+  }
+}
+
+.logo {
+  padding: 15px 0 15px 15px;
+  margin: 0 15px 0 0;
+  border-right: 1px solid #c1c4c7;
+  line-height: 1;
+  img {
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+  }
+  span {
+    font-family: 'gilroybold', sans-serif;
+    font-weight: bolder;
+    display: inline-block;
+  }
+}
+
+ul#side-navigation {
+  width: 100%;
+  margin-top: 15px;
+  li {
+    list-style-type: none;
+    display: block;
+    button {
+      width: 83%;
+      height: auto;
+      display: block;
+      background: #e4e6e8;
+      color: #65696c;
+      border: none;
+      border-radius: 4px;
+      padding: 11px 8px;
+      margin-bottom: 8px;
+      text-align: left;
+      span {
+        font-size: 12px;
+        vertical-align: middle;
+        img {
+          width: 12px;
+          height: 14px;
+          display: inline-block;
+          position:relative;
+          bottom: 1px;
+        }
+      }
+    }
+  }
+}
+
+#productPlanContainer {
+  padding-top: 0;
+  & > div {
+    padding: 0 !important;
+    .column {
+      padding: 15px 0 !important;
+      // background: grey;
+      color: inherit;
+      &::before {
+        content: "•";
+      }
+    }
+  }
+  &::before {
+    display: none;
+  }
+}
