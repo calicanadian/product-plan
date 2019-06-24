@@ -6,7 +6,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -19,7 +19,8 @@ gem 'webpacker'
 # gem 'mini_racer', platforms: :ruby
 gem 'haml-rails'
 gem 'awesome_print'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3.3'
+gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails'
 
@@ -32,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

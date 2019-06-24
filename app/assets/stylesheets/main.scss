@@ -8,6 +8,39 @@ body {
     padding:0 !important;
     margin:0 !important;
   }
+  .modal {
+    &#step1, &#step2, &#step3 {
+      position: absolute;
+      right: 110%;
+      left: -126%;
+      top: 20px;
+      overflow: visible;
+    }
+
+    .pointer {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left:104%;
+      top: 10%;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid #fff;
+    }
+
+    .complete-step-button {
+      background: #1973ba;
+      padding: 7px 25px;
+      color: #fff;
+    }
+
+    #laneDropZone {
+      width: 100%;
+      height: 50px;
+      border: 1px dashed #c1c4c7;
+      border-radius: 6px;
+    }
+  }
 }
 
 .header-segment {
@@ -80,29 +113,31 @@ ul#side-navigation {
   width: 100%;
   margin-top: 15px;
   li {
+    width: 83%;
+    height: auto;
     list-style-type: none;
     display: block;
-    button {
-      width: 83%;
-      height: auto;
-      display: block;
-      background: #e4e6e8;
-      color: #65696c;
-      border: none;
-      border-radius: 4px;
-      padding: 11px 8px;
-      margin-bottom: 8px;
-      text-align: left;
-      span {
-        font-size: 12px;
-        vertical-align: middle;
-        img {
-          width: 12px;
-          height: 14px;
-          display: inline-block;
-          position:relative;
-          bottom: 1px;
-        }
+    background: #e4e6e8;
+    color: #65696c;
+    border: none;
+    border-radius: 4px;
+    padding: 11px 8px;
+    margin-bottom: 8px;
+    text-align: left;
+
+    &:hover, &:active {
+      cursor: move;
+    }
+
+    span {
+      font-size: 12px;
+      vertical-align: middle;
+      img {
+        width: 12px;
+        height: 14px;
+        display: inline-block;
+        position:relative;
+        bottom: 1px;
       }
     }
   }
@@ -123,5 +158,15 @@ ul#side-navigation {
   }
   &::before {
     display: none;
+  }
+
+  #productRows {
+    .product-row {
+      width: 100%;
+      height: 40px;
+      padding: 30px 15px;
+      margin: 0;
+      background: #fff;
+    }
   }
 }

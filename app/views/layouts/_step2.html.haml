@@ -1,0 +1,13 @@
+.row
+  .col-md-12
+    = image_tag("add_bar_example.gif", width: '100%')
+    %h4
+      Awesome! Now let's add a few bars
+    %p
+      Bars are your specific initiative. Use them to represent your epics, projects, or tasks and provide an at a glance view of priority, relationships, and progress.
+    %p
+      Drag and drop a bar to get started.
+    .pull-right
+      %button{id: "completeStep2", class: "complete-step-button btn ui-widget-content", onClick: "activateAddBar(2); updateStepsCompleted('#step2', 2);"}
+        Got it
+    .pointer
