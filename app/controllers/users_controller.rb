@@ -15,10 +15,8 @@ class UsersController < ApplicationController
   end
 
   def steps_completed
-    puts "SESSION::::::   #{session[:user_id]}"
     if @current_user
       steps = Array.wrap(@current_user.steps_completed.gsub(/\[|\]|\s/, '').split(','))
-      puts "STEPS:::::::::::: #{steps}"
       render json: {
         user: @current_user, productLanes: @product_lanes, productBars: @product_bars, steps_completed: @completed_steps
       }

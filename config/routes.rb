@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   get :logged_in, to: 'sessions#logged_in'
   get :steps_completed, to: 'users#steps_completed'
   post 'complete_step/:step', to: 'users#complete_step'
-  get "/pages/:step_id/get_step", to: 'pages#get_step'
-  get :fetch_registration_form, to: 'pages#fetch_registration_form'
-  get :fetch_login_form, to: 'pages#fetch_login_form'
   get :login, to: 'sessions#login'
   get :sign_up, to: 'sessions#sign_up'
 

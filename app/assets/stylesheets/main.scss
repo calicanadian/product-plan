@@ -11,6 +11,9 @@ body {
   .no-padding {
     padding:0 !important;
   }
+  .no-padding-right {
+    padding-right: 0 !important;
+  }
   .modal {
     &#step1, &#step2, &#step3 {
       position: absolute;
