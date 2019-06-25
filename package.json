@@ -12,5 +12,6 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.7.2"
-  }
+  },
+  "postinstall": "npm rebuild node-sass"
 }
