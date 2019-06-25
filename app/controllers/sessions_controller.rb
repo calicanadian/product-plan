@@ -18,18 +18,12 @@ class SessionsController < ApplicationController
   end
 
   def logged_in
+    @current_user = @current_user.blank? ? User.create(email: "sometestuser#{rand(0..9000)}@testing.com", password: "productplandemo", steps_completed: "0") : @current_user
     if @current_user
-      render json: { logged_in: true, user: @current_user }
+      session[:user_id] = @current_user.id
+      render json: { logged_in: true, user: @current_user, steps_completed: @completed_steps, productLanes: @product_lanes, productBars: @product_bars }
     else
-      # normally we would send back logged in false and redirect to login
-      # render json: { logged_in: false }
-      user = User.create(email: "sometestuser#{rand(0..9000)}@testing.com", password: "productplandemo", steps_completed: "0,1,2")
-      if user
-        session[:user_id] = user.id
-        render json: { status: :created, logged_in: true, user: user}
-      else
-        render json: {status: 401}
-      end
+      render json: {status: 401}
     end
   end
 

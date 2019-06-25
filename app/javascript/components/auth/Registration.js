@@ -18,6 +18,7 @@ class Registration extends React.Component {
   }
 
   handleRegistrationSubmit(event) {
+    alert("handleRegistrations");
     const { email, password, password_confirmation } = this.state;
 
     axios.post("/registrations", {
@@ -33,6 +34,7 @@ class Registration extends React.Component {
         this.setState({
           registrationErrors: ""
         });
+        window.location.replace('/');
       }
     }).catch(error => {
       console.log("registration error", error);
@@ -40,9 +42,11 @@ class Registration extends React.Component {
         registrationErrors: error
       });
     });
+    event.preventDefault();
   }
 
   handleRegistrationChange(event) {
+    console.log(event.target);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -50,14 +54,11 @@ class Registration extends React.Component {
   }
 
   getLoginForm() {
-    axios.get("/fetch_registration_form", { withCredentials: true }).then(response => {
-      document.getElementById("registrationFormContainer").html(response.login_form);
-      document.getElementById("userRegistrationForm").attr("onSubmit", this.handleRegistrationSubmit)
-      document.getElementById("userEmail").attr("value", this.state.email).attr("onChange", this.handleRegistrationChange);
-      document.getElementById("userPassword").attr("value", this.state.password).attr("onChange", this.handleRegistrationChange);
-      document.getElementById("userPasswordConfirmation").attr("value", this.state.password_confirmation).attr("onChange", this.handleRegistrationChange);
-      document.getElementById("gotoLogin").attr("onClick", gotoLogin());
-    })
+    document.getElementById("userRegistrationForm").attr("onSubmit", this.handleRegistrationSubmit)
+    document.getElementById("userEmail").attr("value", this.state.email).attr("onChange", this.handleRegistrationChange);
+    document.getElementById("userPassword").attr("value", this.state.password).attr("onChange", this.handleRegistrationChange);
+    document.getElementById("userPasswordConfirmation").attr("value", this.state.password_confirmation).attr("onChange", this.handleRegistrationChange);
+    document.getElementById("gotoLogin").attr("onClick", gotoLogin());
   }
 
   goToLogin() {
@@ -65,9 +66,10 @@ class Registration extends React.Component {
   }
 
   render() {
-    return (console.log("something else"));
+    return (
+      console.log("registrations")
+    )
   }
-
 }
 
 export default Registration

@@ -1,11 +1,22 @@
-.panel
+.panel.col-md-6.col-md-offset-3
   .panel-body
-    .col-md-12
-      %form{html: {id: "userLoginForm"}}
-        .col-md-12
-          = text_field_tag{id: 'userEmail', type: 'email', placeholder: 'email', required: true}
-        .col-md-12
-          = text_field_tag{id: 'userPassword', type: 'password', placeholder: 'password', required: true}
-        .col-md-4.col-md-offset-4.col-xs-12
-          %button{type: 'submit'}
-            Login
+    .row
+      %form{url: sessions_path, method: :patch, html: {id: "userLoginForm", class: "col-md-12"}}
+        .row
+          .col-md-12
+            = text_field_tag :email, "",  id: 'userEmail', class: 'form-control', type: 'email', placeholder: 'Email', required: true
+          .col-md-12
+            &nbsp;
+          .col-md-12
+            = text_field_tag :password, "", id: 'userPassword', class: 'form-control', type: 'password', placeholder: 'Password', required: true
+        .row
+          .col-md-12
+            &nbsp;
+          .col-md-4.col-md-offset-4.col-xs-12.text-center
+            %button{type: 'submit', class: "btn btn-primary"}
+              Login
+          .col-md-12
+            &nbsp;
+          %p.col-md-12.text-center
+            Already have an account?
+            = link_to "Sign Up", sign_up_path

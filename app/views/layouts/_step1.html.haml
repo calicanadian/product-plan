@@ -1,6 +1,8 @@
 .row
   .col-md-12
-    #laneDropZone
+    %a.close
+      %i.fa.fa-times
+    = image_tag("add_lane_example.gif", width: '100%')
     %h4
       We'll start with a lane
     %p
@@ -8,5 +10,6 @@
     %p
       Drag and drop a lane to get started.
     .pull-right
-      %button{id: "completeStep1", class: "complete-step-button btn ui-widget-content", onClick: "activateAddBar(1)"}
+      %button{id: "completeStep1", class: "complete-step-button btn ui-widget-content", onClick: "activateAddLane(1); updateStepsCompleted('#step1', 1);"}
+        Got it
     .pointer

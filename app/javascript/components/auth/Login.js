@@ -48,13 +48,11 @@ class Login extends React.Component {
   }
 
   getLoginForm() {
-    axios.get("/fetch_login_form", { withCredentials: true }).then(response => {
-      document.getElementById("loginFormContainer").html(response.login_form);
-      document.getElementById("userLoginForm").attr("onSubmit", this.handleLoginSubmit)
-      document.getElementById("userEmail").attr("value", this.state.email).attr("onChange", this.handleLoginChange);
-      document.getElementById("userPassword").attr("value", this.state.password).attr("onChange", this.handleLoginChange);
-      document.getElementById("goToRegistration").attr("onClick", goToRegistration);
-    });
+    document.getElementById("loginFormContainer").html(response.login_form);
+    document.getElementById("userLoginForm").attr("onSubmit", this.handleLoginSubmit)
+    document.getElementById("userEmail").attr("value", this.state.email).attr("onChange", this.handleLoginChange);
+    document.getElementById("userPassword").attr("value", this.state.password).attr("onChange", this.handleLoginChange);
+    document.getElementById("goToRegistration").attr("onClick", goToRegistration);
   }
 
   goToRegistration() {

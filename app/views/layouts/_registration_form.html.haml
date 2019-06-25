@@ -1,13 +1,23 @@
-.panel
+.panel.col-md-6.col-md-offset-3
   .panel-body
-    .col-md-12
-      %form{html: {id: "userRegistrationForm"}}
-        .col-md-12
-          = text_field_tag{id: 'userEmail', type: 'email', placeholder: 'email', required: true}
-        .col-md-12
-          = text_field_tag{id: 'userPassword', type: 'password', placeholder: 'password', required: true}
-        .col-md-12
-          = text_field_tag{id: 'userPasswordConfirmation', type: 'password', placeholder: 'password_confirmation', required: true}
-        .col-md-4.col-md-offset-4.col-xs-12
-          %button{type: 'submit'}
-            Register
+    .row
+      = form_for(:user, html: {id: 'userRegistrationForm', class: 'col-md-12', onSubmit: 'handleRegistrationSubmit()'}) do |f|
+        .row
+          .col-md-12
+            = f.text_field :email, id: 'userEmail', class: "form-control", type: 'email', placeholder: 'Email', required: true
+          .col-md-12
+            &nbsp;
+          .col-md-12
+            = f.text_field :password, id: 'userPassword', class: "form-control", type: 'password', placeholder: 'Password', required: true
+          .col-md-12
+            &nbsp;
+          .col-md-12
+            = f.text_field :password_confirmation, id: 'userPasswordConfirmation', class: "form-control", type: 'password', placeholder: 'Password Confirmation', required: true
+        .row
+          .col-md-12
+            &nbsp;
+          .col-md-4.col-md-offset-4.col-xs-12
+            %button{type: 'submit', class: 'btn btn-primary'}
+              Register
+          .col-md-12
+            &nbsp;

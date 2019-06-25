@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :product_lanes
+  has_many :product_bars, through: :product_lanes
 end
